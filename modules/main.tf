@@ -2,6 +2,7 @@ provider "aws" {
   region = var.region_name
 }
 
+#module to launch vpc with two  private and two public subnets
 module "webapp_vpc" {
   source = "./vpc"
 
@@ -14,6 +15,7 @@ module "webapp_vpc" {
   private_subnets = var.private_subnets
 }
 
+##Module to launch EKS cluster 
 module "webapp_cluster" {
   source = "./webapp_cluster"
 
@@ -26,7 +28,7 @@ module "webapp_cluster" {
     module.webapp_vpc
   ]
 }
-
+##Module for eks node group 
 module "eks_node_group" {
   source = "./node_group"
 
@@ -42,3 +44,9 @@ module "eks_node_group" {
     module.webapp_vpc
   ]
 }
+#module for ecr repo 
+
+module "ecr" {
+  source = "./ecr"
+}
+

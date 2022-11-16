@@ -1,12 +1,11 @@
 locals {
   subnet_common_tags = {
-    "kubernetes.io/cluster/var.eks_cluster_name" = "shared"
+    "kubernetes.io/cluster/${var.eks_cluster_name}" = "shared"
   }
 }
 variable "eks_cluster_name" {
   description = "Name of the EKS Cluster"
   type        = string
-  default     = "webapp"
 }
 
 variable "region_name" {
