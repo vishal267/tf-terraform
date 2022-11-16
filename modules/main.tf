@@ -7,6 +7,7 @@ module "webapp_vpc" {
 
   environment     = var.environment
   region_name     = var.region_name
+  eks_cluster_name = var.eks_cluster_name
 
   vpc_cidr_block  = var.vpc_cidr_block
   public_subnets  = var.public_subnets

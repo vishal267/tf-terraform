@@ -4,9 +4,9 @@ generate "backend" {
   contents  = <<EOF
 terraform {
     backend "s3" {
-        bucket  = "k8sone"
+        bucket  = "k8s-webapp-tf"
         key     = "${path_relative_to_include()}/terraform.tfstate"
-        region  = "us-east-2"
+        region  = "ap-south-1"
         encrypt = true
     }
 }

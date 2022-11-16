@@ -6,13 +6,13 @@ include "remote_state" {
 }
 
 locals {
-  region = "ca-central-1"
+  region = "ap-south-1"
 }
 
 inputs = {
   environment         = "Production"
-  eks_cluster_name    = "Prod-EKS-WEBAPP"
-  eks_cluster_version = "1.22"
+  eks_cluster_name    = "webapp"
+  eks_cluster_version = "1.23"
   node_group_name     = "webapp-prod-01"
   node_role_name      = "NodeRole-prod"
   nodegroup_keypair   = "webapp-prod-01-key"
