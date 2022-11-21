@@ -6,7 +6,7 @@ include "remote_state" {
 }
 
 locals {
-  region = "ap-south-1"
+  region = "us-west-2"
 }
 
 inputs = {
